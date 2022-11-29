@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class PostController {
@@ -25,9 +27,13 @@ public class PostController {
     @PostMapping("/api/post")
     public Post createPost(@RequestBody PostRequestDto postRequestDto) {
 
-        return PostService.createPost(postRequestDto);
+        return postService.createPost(postRequestDto);
     }
 
+    /*@GetMapping("/api/post")
+    public List<Post> getPost() {
+        return postService.getPost();
+    }*/
 
 
 
