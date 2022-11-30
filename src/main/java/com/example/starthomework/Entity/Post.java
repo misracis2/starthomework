@@ -1,6 +1,6 @@
-package Entity;
+package com.example.starthomework.Entity;
 
-import Dto.PostRequestDto;
+import com.example.starthomework.Dto.PostRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -29,4 +29,10 @@ public class Post extends Timestamped{
         this.password = postRequestDto.getPassword();
     }
 
+    public void update(PostRequestDto postRequestDto) {
+        this.username = postRequestDto.getUsername();
+        this.title = postRequestDto.getTitle();
+        this.content = postRequestDto.getContents();
+        System.out.println("업데이트");
+    }
 }
