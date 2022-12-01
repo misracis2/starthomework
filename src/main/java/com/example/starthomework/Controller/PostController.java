@@ -17,19 +17,13 @@ public class PostController {
 
     private final PostService postService;
 
-    @GetMapping("/")
-    public ModelAndView home()
-    {
-        return new ModelAndView("index");
-    }
-
     @PostMapping("/post")
     public PostResponseDto createPost(@RequestBody PostRequestDto postRequestDto) {
         return postService.createPost(postRequestDto);
     }
 
     @GetMapping("/post")
-    public List<Post> getPosts() {
+    public List<PostResponseDto> getPosts() {
         return postService.getPosts();
     }
 
