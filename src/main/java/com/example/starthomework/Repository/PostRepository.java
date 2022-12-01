@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findAllByOrderByModifiedAtDesc();
 
-    Optional<Object> findByIdAndPassword(Long id, String password);
+    Optional<Post> findByIdAndPassword(Long id, String password);
 }
